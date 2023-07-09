@@ -16,15 +16,16 @@
       </div>
 
       <nav>
-        <ul>
-          <li>
-            <a href="#riwayat">Riwayat</a>
-          </li>
-          <li>
-            <a href="#hobi">Hobi</a>
-          </li>
+        <ul class="menu">
+          <li><a href="#riwayat">Riwayat</a></li>
+          <li><a href="#hobi">Hobi</a></li>
           <li>
             <a href="#pendidikan">Pendidikan</a>
+            <ul class="dropdown">
+              <li><a href="#sd">SD</a></li>
+              <li><a href="#smp">SMP</a></li>
+              <li><a href="#sma">SMA</a></li>
+            </ul>
           </li>
         </ul>
       </nav>
@@ -44,16 +45,18 @@
         <!-- hobi -->
         <article id="hobi" class="card">
           <h2>Hobi</h2>
+          <img name="slide" class="feature-image" />
           <p>
             Hobi saya adalah melakukan solo riding menelusuri jalanan kota-kota
             dan pedesaan yang menenangkan saya.
           </p>
         </article>
+
         <article id="pendidikan" class="card">
           <h2>Pendidikan</h2>
           <p>Berikut adalah riwayat pendidikan yang saya tempuh selama ini.</p>
           <section>
-            <h3>SD Negeri Julang</h3>
+            <h3 id="sd">SD Negeri Julang</h3>
             <img
               src="assets\image\sdnjulang.jpeg"
               alt="sdnjulang"
@@ -62,7 +65,7 @@
             <p>Ini penjelasan terkait SDN Julang</p>
           </section>
           <section>
-            <h3>SMP Negeri 11 Bogor</h3>
+            <h3 id="smp">SMP Negeri 11 Bogor</h3>
             <img
               src="assets\image\smp11bogor.jpg"
               alt="smp11bogor"
@@ -71,7 +74,7 @@
             <p>Ini penjelasan terkait SMP Negeri 11 Bogor</p>
           </section>
           <section>
-            <h3>SMA Negeri 1 Bogor</h3>
+            <h3 id="sma">SMA Negeri 1 Bogor</h3>
             <img
               src="assets\image\sma1bogor.jpg"
               alt="sma1bogor"
@@ -89,7 +92,11 @@
             <h2>Profil</h2>
             <p>Profil Singkat Saya</p>
             <figure>
-              <img src="assets\image\mypic.jpg" alt="mypic-profile" />
+              <img
+                src="assets\image\mypic-profile.jpg"
+                alt="mypic-profile"
+                class="mypic-profile"
+              />
               <figcaption>Reqyan Lazuardi Imanimansur</figcaption>
             </figure>
           </header>
@@ -115,7 +122,28 @@
     </main>
 
     <footer>
-      <p>Persoan Profile 2023, Reqyan Lazuardi Imanimansur</p>
+      <p>Personal Profile 2023, Reqyan Lazuardi Imanimansur</p>
     </footer>
+    <script>
+      var i = 0;
+      var images = [];
+      var time = 3000;
+
+      // kumpulan gambar
+      images[0] = "assets/image/gambar1.jpg";
+      images[1] = "assets/image/gambar2.jpg";
+      images[2] = "assets/image/gambar3.jpg";
+
+      function changeImg() {
+        document.slide.src = images[i];
+        if (i < images.length - 1) {
+          i++;
+        } else {
+          i = 0;
+        }
+        setTimeout("changeImg()", time);
+      }
+      window.onload = changeImg;
+    </script>
   </body>
 </html>
