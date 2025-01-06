@@ -11,15 +11,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>
+      <body className="flex flex-col min-h-screen">
         <ThemeProvider enableSystem={true} attribute="class">
           <Navbar />
-          {children}
+          <main className="flex-grow">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

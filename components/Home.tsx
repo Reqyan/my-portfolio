@@ -1,6 +1,6 @@
-"use server";
-import React from "react";
-import { Link } from "react-scroll/modules";
+"use client";
+import React, { useEffect, useState } from "react";
+import Typewriter from "typewriter-effect";
 
 const Home = () => {
   return (
@@ -11,7 +11,18 @@ const Home = () => {
       <div className="mt-1">
         <div className="text-6xl">
           <h1 className="" style={{ fontSize: "96px" }}>
-            Hello!
+            <Typewriter
+              options={{
+                loop: true,
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("Hello!")
+                  .pauseFor(2000)
+                  .deleteAll()
+                  .start();
+              }}
+            />
           </h1>
           <h1 className="" style={{ fontSize: "96px" }}>
             <span style={{ color: "#3B6CE9" }}>
