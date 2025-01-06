@@ -6,9 +6,9 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="flex flex-col items-center justify-center my-10 py-16 text-bold"
+      className="flex flex-col items-center justify-center my-0 py-10 text-bold"
     >
-      <div className="mt-20">
+      <div className="mt-1">
         <div className="text-6xl">
           <h1 className="" style={{ fontSize: "96px" }}>
             Hello!

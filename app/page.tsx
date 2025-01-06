@@ -7,10 +7,10 @@ const poppins = Poppins({
 })
 
 
-export default function Home() {
+export default function HomePage() {
   return (
    <main className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl">
-    <Home/>
+    <Home />
     <AboutSection/>
    </main>
   )
